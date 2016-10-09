@@ -3,7 +3,6 @@ from flask import request, url_for, g
 from flaskexample import app
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
-from flaskexample.a_Model import ModelIt
 
 import pandas as pd
 import psycopg2
