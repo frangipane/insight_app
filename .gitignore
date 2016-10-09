@@ -1,0 +1,6 @@
+environment.yml
+tmp/
+*~
+*.png
+flaskexample/__pycache__/
+.DS_Store

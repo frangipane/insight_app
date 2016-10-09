@@ -1,0 +1,68 @@
+{% extends "base_layout.html" %}
+
+{% block title %}Orthopedic surgeon profile{% endblock %}
+
+{% block content %}
+      
+<!-- multiple doctors with same name found -->
+{% if topic=='none' %}
+<div class="container">
+
+    <h2>{{ first_name }} {{ last_name }} did not make enough
+      Medicare claims <br>in 2014 to be evaluated by the model.
+      <br><br>
+      Try searching for another doctor?</h2>
+    <br>
+    
+<div class="container">
+  <form action="/output" method="GET">
+    <div class="form-group">
+      <label for="first_name">First name:</label>
+      <input type="text" id="first_name" name="first_name" placeholder="e.g. Jeffrey">
+      <br>
+      <br>
+      <label for="last_name">Last name:</label>
+          <input type="text" id="last_name" name="last_name" placeholder="e.g. Parker" required>
+          <br>
+          <br>
+    </div>
+    
+    <div>
+      <button type="submit" class="btn btn-conf btn-green">submit</button>
+    </div>
+  </form>
+</div>
+
+      
+</div><!-- /.container-->    
+{% endif %} <!-- / if npi has been assigned a topic -->
+
+<!-- no records/doctor was not used in lda model -->
+{% if topic!='none' %}
+<div class="container">
+  <h1>2014 Medicare claims by {{ first_name }} {{ last_name }}</h1>
+  <h2>These are claims made by this doctor that are relevant <br>to the specialty,
+      "<b>{{ topic }}</b>".
+  </h2><br>
+  
+  <table class="table table-hover">
+    <tr>
+      <th>HCPCS code</th>
+      <th>HCPCS description</th>
+      <th>place of service</th>
+      <th>unique beneficiary count</th>
+    </tr>
+    {% for row in rows %}
+    <tr>
+      <td>{{ row['hcpcs_code'] }}</td>
+      <td>{{ row['hcpcs_description'] }}</td>
+      <td>{{ row['place_of_service'] }}</td>
+      <td>{{ row['bene_unique_cnt'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+<!--  <a class='home-link' href="{{ url_for('index') }}">Start a new search</a> -->
+</div><!-- /.container -->
+{% endif %}
+    
+{% endblock %}<!-- end content -->

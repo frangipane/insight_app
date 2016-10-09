@@ -1,0 +1,79 @@
+/*
+body {
+    padding-top: 50px;
+    background: url('../images/xray_background_negative.jpg') no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.starter-template {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.starter-template h3 {
+    text-align: center;
+}
+*/
+
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}
+/*
+.form-control {
+    padding: 10px 10px 10px 10px;
+}
+*/
+
+#footer_bar {
+    background: black;
+    width:100%;
+    padding-bottom: 0px;
+}
+
+tr.clickable-row {
+    cursor: pointer;
+    text-align: left;
+}
+
+.table table-hover {
+    bgcolor: black;
+}
+
+.form-group {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+.form-control {
+    font-size: 18px;
+}
+
+.container {
+    text-align: center;
+}
+
+button{
+  margin:auto;
+  display:block;
+}
+
+a.home-link {
+    padding-bottom: 50px;
+    
+}
+
+.table-hover {
+    text-align: left;
+    font-size: medium;
+}
+
+#blurb {
+    margin: 0 auto;
+    text-align: left;
+    width: 900px;
+}

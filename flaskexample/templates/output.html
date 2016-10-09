@@ -1,0 +1,74 @@
+{% extends "base_layout.html" %}
+
+{% block title %}Orthopedic surgeon search results{% endblock %}
+
+
+{% block content %}
+
+<!-- no doctors found -->
+{% if number_of_hits == 0 %}
+<div class="container">
+  <div class="start-template">
+    <!-- <h2>Results</h2> -->
+    <!-- <p></p> -->
+  </div>
+  
+  <div class = "container">
+    
+    <h2>{{first_name}} {{last_name}} was not found.  Please try again.</h2>
+    <br>
+    <form action="/output" method="GET">
+      <div class="form-group">
+        <label for="first_name">First name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="e.g. Jeffrey">
+        <br>
+        <br>
+        <label for="last_name">Last name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="e.g. Parker">
+        <br>
+        <br>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-conf-2 btn-green">submit</button>
+      </div>
+    </form>
+  </div> <!-- ./container -->
+     
+</div><!-- /.container -->
+{% endif %} <!-- / if no doctors found -->
+    
+<!-- one or multiple doctors with same name found -->
+{% if number_of_hits >= 1 %}
+<div class="container">
+
+  <h1>Select from one of the doctors listed below</h1>
+  <br><br>
+  
+  <table class="table table-hover">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip code</th>
+    </tr>
+    {% for doctor in doctors %}
+    <tr>
+    <tr class='clickable-row' data-href="{{ url_for('view_profile', npi=doctor['npi']) }}">
+      <!-- <td><a href="{{ url_for('view_profile', npi=doctor['npi']) }}">{{ doctor['first_name'] }}</a></td> -->
+      <td>{{ doctor['first_name'] }}</td>
+      <td>{{ doctor['last_name'] }}</td>
+      <td>{{ doctor['street'] }}</td>
+      <td>{{ doctor['city'] }}</td>
+      <td>{{ doctor['state'] }}</td>
+      <td>{{ doctor['zip_code'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+</div><!-- /.container -->
+{% endif %} <!-- / if multiple doctors found -->
+    
+    
+{% endblock %} <!-- end block content  -->

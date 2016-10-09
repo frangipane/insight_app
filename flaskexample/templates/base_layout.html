@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+
+    <title>{% block title %}{% endblock %} | EigenDoctor</title>
+
+    <!-- Bootstrap core CSS -->
+    
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/ionicons.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/starter-template.css" rel="stylesheet">
+
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+  <body>
+
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top"> -->
+    <!--   <div class="container"> -->
+    <!--     <div class="navbar-header"> -->
+    <!--       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> -->
+    <!--         <span class="sr-only">Toggle navigation</span> -->
+    <!--         <span class="icon-bar"></span> -->
+    <!--         <span class="icon-bar"></span> -->
+    <!--         <span class="icon-bar"></span> -->
+    <!--       </button> -->
+    <!--       <a class="navbar-brand" href="{{ url_for('index') }}">EigenDoctor</a> -->
+    <!--     </div> -->
+    <!--     <div id="navbar" class="collapse navbar-collapse"> -->
+    <!--       <ul class="nav navbar-nav"> -->
+    <!--         <li class="active"><a href="{{ url_for('index') }}">Home</a></li> -->
+    <!--         <li><a href="{{ url_for('about') }}">About</a></li> -->
+    <!--         <\!-- <li><a href="#contact">Contact</a></li> -\-> -->
+    <!--       </ul> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </nav> -->
+    <div id="h" style="min-height:20px;max-height:20px;">
+      <div class="logo" id="logo">
+        <a href="{{ url_for('index') }}">EigenDoctor</a>
+      </div>
+      <div class="social hidden-xs"><a href="{{ url_for('about') }}">About</a></div>
+    </div><!-- /H -->
+
+    
+    <div id="g" style="min-height:650px;">
+      <div class="container">
+         <div id="content">{% block content %}{% endblock content %}</div>
+      </div>
+    </div>
+
+    
+    <div id="f">
+      <div class="container">
+        <div class="row centered">
+          <h3><a href="{{ url_for('index') }}">Start a new search</a></h3>
+        </div> <!-- /row-->
+      </div> <!-- /container -->
+    </div><!-- /f -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- jQuery -->
+    <!--<script src="../static/js/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- Bootstrap core JS -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+    <!-- custom JS -->
+    <script src="../static/js/my_custom.js"></script>
+
+  </body>
+</html>

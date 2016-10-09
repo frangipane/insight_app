@@ -1,0 +1,182 @@
+{% extends "base_layout_input.html" %}
+
+{% block title %}A basis for your orthopedic decisions{% endblock %}
+
+{% block content %}
+<!-- Look up by surgeon first, last name -->
+  <div class="container">
+    <h1>Look up an orthopedic surgeon</h1>
+    <br>
+    
+    <div class="container">
+      
+      <form action="/output" method="GET">
+        <div class="form-group">
+          <label for="first_name">First name:</label>
+          <input type="text" id="first_name" name="first_name" placeholder="e.g. Jeffrey">
+          <br>
+          <br>
+          <label for="last_name">Last name:</label>
+          <input type="text" id="last_name" name="last_name" placeholder="e.g. Parker" required>
+          <br>
+          <br>
+        </div>
+        
+        <div>
+          <button type="submit" class="btn btn-conf btn-green">submit</button>
+        </div>
+      </form>
+      
+    </div> <!-- ./container -->
+  </div><!-- /.container-->
+{% endblock content %} <!--/ block content -->
+
+
+<!-- look up by specialty -->
+{% block head2 %}
+Or look up orthopedic surgeons by estimated specialty
+{% endblock head2 %}
+
+{% block content2 %}
+<div class="container">
+  <form action="/by_specialty" method="GET">
+    
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-lg btn-group-justified btn-group-fill-height" data-toggle="buttons">
+        
+        <div class="row">
+          
+          <label class="btn btn-outline-secondary btn-large active" style="font-size: 20px;">
+            <input type="radio" name="options" id="1" value="0" checked="">
+            Spine, lower back
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+                 <input type="radio" name="options" id="2" value="1" autocomplete="off">
+                 <span>Lower leg, foot, ankle</span>
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="3" value="2" autocomplete="off">
+            <span>Spine bones</span>
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="4" value="3" autocomplete="off">
+            <span>Emergency Room</span>
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="5" value="4" autocomplete="off">
+            <span>Knee, pelvis, hip</span>
+          </label>
+        </div> <!-- /.row -->
+        
+        <div class="row">
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="6" value="5" autocomplete="off">
+            <span>Hand, wrist, fingers</span>
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="7" value="6" autocomplete="off">
+            <span>Knee, shoulder</span>
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="8" value="7" autocomplete="off">
+            <span>Hospital procedures</span>
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="9" value="8" autocomplete="off">
+            <span>Therapy</span>
+          </label>
+          
+          <label class="btn btn-outline-secondary btn-large" style="font-size: 20px;">
+            <input type="radio" name="options" id="10" value="9" autocomplete="off">
+            <span>Trauma, out-of-hospital</span>
+          </label>
+        </div><!-- /.row -->
+      
+      </div><!-- /.btn group -->
+    </div><!-- /.btn toolbar -->
+
+    <!-- states dropdown -->
+    <br><br>
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+    
+        <div class="form-group">
+	  <label for="state" class="col-sm-2 control-label">State: </label>
+	  <div class="col-sm-10">
+		 <select class="form-control" id="state" name="state">
+		   <option value="">N/A</option>
+		   <option value="AK">Alaska</option>
+		   <option value="AL">Alabama</option>
+		   <option value="AR">Arkansas</option>
+		   <option value="AZ">Arizona</option>
+		   <option value="CA">California</option>
+		   <option value="CO">Colorado</option>
+		   <option value="CT">Connecticut</option>
+		   <option value="DC">District of Columbia</option>
+		   <option value="DE">Delaware</option>
+		   <option value="FL">Florida</option>
+		   <option value="GA">Georgia</option>
+		   <option value="HI">Hawaii</option>
+		   <option value="IA">Iowa</option>
+		   <option value="ID">Idaho</option>
+		   <option value="IL">Illinois</option>
+		   <option value="IN">Indiana</option>
+		   <option value="KS">Kansas</option>
+		   <option value="KY">Kentucky</option>
+		   <option value="LA">Louisiana</option>
+		   <option value="MA">Massachusetts</option>
+		   <option value="MD">Maryland</option>
+		   <option value="ME">Maine</option>
+		   <option value="MI">Michigan</option>
+		   <option value="MN">Minnesota</option>
+		   <option value="MO">Missouri</option>
+		   <option value="MS">Mississippi</option>
+		   <option value="MT">Montana</option>
+		   <option value="NC">North Carolina</option>
+		   <option value="ND">North Dakota</option>
+		   <option value="NE">Nebraska</option>
+		   <option value="NH">New Hampshire</option>
+		   <option value="NJ">New Jersey</option>
+		   <option value="NM">New Mexico</option>
+		   <option value="NV">Nevada</option>
+		   <option value="NY">New York</option>
+		   <option value="OH">Ohio</option>
+		   <option value="OK">Oklahoma</option>
+		   <option value="OR">Oregon</option>
+		   <option value="PA">Pennsylvania</option>
+		   <option value="PR">Puerto Rico</option>
+		   <option value="RI">Rhode Island</option>
+		   <option value="SC">South Carolina</option>
+		   <option value="SD">South Dakota</option>
+		   <option value="TN">Tennessee</option>
+		   <option value="TX">Texas</option>
+		   <option value="UT">Utah</option>
+		   <option value="VA">Virginia</option>
+		   <option value="VT">Vermont</option>
+		   <option value="WA">Washington</option>
+		   <option value="WI">Wisconsin</option>
+		   <option value="WV">West Virginia</option>
+		   <option value="WY">Wyoming</option>
+		 </select>
+	  </div><!-- /.col-sm-10 -->
+        </div><!-- /.form-group -->       
+        <br><br><br>
+        
+      </div><!-- /.col-lg-4 col-lg-offset-4 -->
+    </div><!-- /.row -->
+
+    <div>
+      <button type="submit" class="btn btn-conf btn-green">submit</button>
+    </div>
+             
+  </form><!-- /. form by_specialty -->
+</div><!-- /.container -->
+{% endblock content2 %}
+
