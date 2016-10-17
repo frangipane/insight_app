@@ -177,13 +177,13 @@ def view_profile(npi):
     topic_labels = ['spine/lower back',
                     'lower leg/ankle/foot',
                     'spine bones',
-                    'ER visit',
+                    'blood, urinalysis tests',
                     'knee/pelvis/hip',
                     'hand/wrist/fingers',
                     'knee/shoulder',
                     'hospital',
                     'therapy',
-                    'trauma out-of-hospital']
+                    'osteoarthritis']
     topic_dict = dict(enumerate(topic_labels))
     print(topic_dict)
     
@@ -258,13 +258,13 @@ def by_specialty():
     topic_labels = ['spine/lower back',
                     'lower leg/ankle/foot',
                     'spine bones',
-                    'ER visit',
+                    'blood, urinalysis tests',
                     'knee/pelvis/hip',
                     'hand/wrist/fingers',
                     'knee/shoulder',
                     'hospital',
                     'therapy',
-                    'trauma out-of-hospital']
+                    'osteoarthritis']
     topic_dict = dict(enumerate(topic_labels))
     topic = topic_dict[topic]
     ## 2 possibilities:
